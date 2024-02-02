@@ -1,12 +1,6 @@
-const heading = document.querySelector('h1');
-
-
-function hello (){
-    if(heading.innerHTML === "Hello!"){
-        heading.innerHTML = "Goodbye!";
-    }else {
-        heading.innerHTML = "Hello!";
-    }
-  
- 
-}
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('form').onsubmit = () => {
+        const name = document.querySelector('#name').value;
+        alert(`Hello ${name}!`);
+    };
+})

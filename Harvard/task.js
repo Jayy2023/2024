@@ -4,7 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('#submit').disabled = true;
 
     document.querySelector('#task').onkeyup = () => {
-        document.querySelector('#submit').disabled = false;
+
+        if(document.querySelector('#task').value.length > 0)    {
+            document.querySelector('#submit').disabled = false;
+        }else {
+            document.querySelector('#submit').disabled = true;
+        }
+        
     }
 
     document.querySelector('form').onsubmit = () => {
@@ -17,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
          document.querySelector('#tasks').appendChild(li);
 
          document.querySelector('#task').value = '';
+
+         document.querySelector('#submit').disabled = true;
 
          //Stop form from submitting
             return false;

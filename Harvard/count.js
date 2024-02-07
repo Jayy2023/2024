@@ -6,12 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
     function count(){
-        counter++;
+        counter++; 
+
         heading.innerHTML = counter;
         if(counter % 10 === 0){
-           alert(`The count is now ${counter}`); 
+           alert(`The person you are talking about is a ${counter}`); 
         }
       
     }
     btn.onclick = count;
+
+    /*setInterval(count, 1000); */ 
 })

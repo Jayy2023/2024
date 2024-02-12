@@ -1,20 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('h1').innerHTML = localStorage.getItem('counter');
 
-    let counter = 0;
+   if(localStorage.getItem('counter')){
+    localStorage.setItem('counter',0);
+   }
     const btn = document.querySelector('button');
     const heading = document.querySelector('h1');
     
     
     function count(){
+        let counter = localStorage.getItem('counter');
         counter++; 
 
         heading.innerHTML = counter;
-        if(counter % 10 === 0){
-           alert(`The person you are talking about is a ${counter}`); 
-        }
+       localStorage.setItem('counter', counter);
       
     }
     btn.onclick = count;
 
-    /*setInterval(count, 1000); */ 
+   
 })
